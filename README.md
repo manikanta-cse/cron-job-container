@@ -8,6 +8,6 @@ Run - docker run -d myalpinecron
 
 To verify its working, you need to check logs
 
-docker exec -ti <id> cat /var/log/script.log
+docker exec -ti 'id' cat /var/log/script.log
 
-id you will get when you run an cantainer
+id - you will get when you run an cantainer
