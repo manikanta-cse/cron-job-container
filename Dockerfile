@@ -1,5 +1,7 @@
 FROM alpine:3.3
 
+RUN apk --update add postgresql-client && rm -rf /var/cache/apk/*
+
 ADD crontab /crontab
 ADD script.sh /script.sh
 COPY entry.sh /entry.sh
