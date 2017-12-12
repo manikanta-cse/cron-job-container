@@ -4,11 +4,9 @@
 
 Build -> docker build -t myalpinecron .
 
-Run -> docker run -d  -e env=preprod myalpinecron
+Run -> docker run -d  -e env=preprod  -p 8090:8090 myalpinecron
 
-To verify its working, you need to check logs
+you can check logs by
 
-docker exec -ti 'id' cat /var/log/script.log
-
-id - you will get when you run an cantainer
+docker logs containerid
 

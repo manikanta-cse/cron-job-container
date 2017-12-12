@@ -17,5 +17,5 @@ else
        
 fi
 
-MAILBODY="Hello $(date)"
+MAILBODY="Hello from container! \n\n $(date)"
 echo -e $MAILBODY | mail -s "$SUBJECT" youremail@domain.com
