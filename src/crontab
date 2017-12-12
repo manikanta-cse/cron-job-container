@@ -1,1 +1,1 @@
-0 8 * * * /src/script.sh >> /var/log/script.log
+0 8 * * * /src/script.sh
