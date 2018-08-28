@@ -4,7 +4,7 @@
 
 Build -> docker build -t myalpinecron .
 
-Run -> docker run -d  -e env=preprod  -p 8090:8090 myalpinecron
+Run -> docker run -d  -e ENVIRONMENT=preprod  -p 8090:8090 myalpinecron
 
 you can check logs by
 

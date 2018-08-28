@@ -1,10 +1,11 @@
 FROM alpine:3.7
 
-# postgress cli , MTA package installation
-RUN apk --update add --no-cache mailx postfix postgresql-client nodejs && rm -rf /var/cache/apk/* 
+RUN apk --update add --no-cache curl mailx postfix postgresql-client nodejs && rm -rf /var/cache/apk/* 
 
 COPY ./ /src
 
-RUN chmod 755 src/script.sh src/entry.sh && /usr/bin/crontab src/crontab && cd /src/api-server; npm install
+WORKDIR /src
 
-ENTRYPOINT ["/bin/sh","/src/entry.sh"]
+RUN chmod 755 script.sh entry.sh && /usr/bin/crontab crontab && cd api-server; npm install
+
+ENTRYPOINT ["/bin/sh","entry.sh"]
